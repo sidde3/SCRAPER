@@ -1,0 +1,28 @@
+# insurance_portal/views.py
+from django.shortcuts import render
+from .models import Patient
+import random
+from django.http import HttpResponse
+
+def eligibility_index(request):
+    return HttpResponse("Eligibility Index Page")
+
+def check_eligibility(patient_id):
+    # Mock eligibility check, replace with actual logic
+    statuses = ['eligible', 'not eligible', 'pending']
+    return random.choice(statuses)
+
+def patient_eligibility(request, patient_id):
+    try:
+        patient = Patient.objects.get(patient_id=patient_id)
+    except Patient.DoesNotExist:
+        patient = Patient.objects.create(patient_id=patient_id)
+    
+    eligibility_status = check_eligibility(patient_id)
+    patient.eligibility_status = eligibility_status
+    patient.save()
+
+    return render(request, 'insurance_portal/eligibility.html', {
+        'patient_id': patient_id,
+        'eligibility_status': eligibility_status
+    })

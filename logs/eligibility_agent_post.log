@@ -1,0 +1,5 @@
+2025-09-07 16:56:29,562 - INFO - Calling API for patient D92126 at http://localhost:8080/eligibility/check-eligibility/
+2025-09-07 16:56:29,827 - INFO - Calling API for patient D38548 at http://localhost:8080/eligibility/check-eligibility/
+2025-09-07 16:56:30,053 - INFO - Calling API for patient D86910 at http://localhost:8080/eligibility/check-eligibility/
+2025-09-07 16:56:30,279 - INFO - Calling API for patient D12578 at http://localhost:8080/eligibility/check-eligibility/
+2025-09-07 16:56:30,506 - INFO - Calling API for patient D30067 at http://localhost:8080/eligibility/check-eligibility/
