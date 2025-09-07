@@ -1,13 +1,9 @@
----
-
 # 🦷 Dental Insurance Eligibility Verification Agent (PoC)
 
 This Proof of Concept (PoC) demonstrates a basic eligibility verification system for dental insurance. It includes two main components:
 
-* `scraper.py`: A web scraper using Playwright to simulate scraping a mock insurer portal.
-* `ai_agent.py`: An intelligent agent that uses an API to verify eligibility and falls back to a default response if the API fails.
-
----
+- `scraper.py`: A web scraper using Playwright to simulate scraping a mock insurer portal.
+- `ai_agent.py`: An intelligent agent that uses an API to verify eligibility and falls back to a default response if the API fails.
 
 ## 📁 Project Structure
 
@@ -17,8 +13,6 @@ This Proof of Concept (PoC) demonstrates a basic eligibility verification system
 ├── logs/                       # Logs written here
 └── mock_insurer_django/        # Django-based mock insurance portal
 ```
-
----
 
 ## 🧩 Components
 
@@ -43,15 +37,13 @@ This Proof of Concept (PoC) demonstrates a basic eligibility verification system
     }
     ```
 
-> **Proxy Setup (for testing):**
-> Run proxies in separate terminals:
->
-> ```bash
-> mitmdump -p 9090
-> mitmdump -p 9091
-> ```
+**Proxy Setup (for testing):**
+Run proxies in separate terminals:
 
----
+```bash
+mitmdump -p 9090
+mitmdump -p 9091
+```
 
 ### 🤖 `ai_agent.py`
 
@@ -84,8 +76,6 @@ This Proof of Concept (PoC) demonstrates a basic eligibility verification system
   }
   ```
 
----
-
 ## ⚙️ Prerequisites
 
 Install required Python packages:
@@ -95,13 +85,11 @@ pip install playwright tenacity requests
 playwright install
 ```
 
-> Ensure browsers are installed after installing Playwright:
->
-> ```bash
-> playwright install
-> ```
+Ensure browsers are installed after installing Playwright:
 
----
+```bash
+playwright install
+```
 
 ## 🧪 Running the Mock Insurance Portal
 
@@ -119,8 +107,6 @@ python manage.py runserver 8080
 python manage.py createsuperuser
 ```
 
----
-
 ## 🚀 How to Run
 
 ### Scraper:
@@ -135,17 +121,13 @@ python scraper.py
 python ai_agent.py
 ```
 
-> AI Agent runs 5 test cases and logs fallback behavior if scraper/API fails.
-
----
+AI Agent runs 5 test cases and logs fallback behavior if scraper/API fails.
 
 ## 📝 Logs
 
 - Scraper logs to **console**
 - AI Agent logs to:
   `logs/eligibility_agent_post.log`
-
----
 
 ## 📦 Sample Output
 
@@ -158,8 +140,6 @@ python ai_agent.py
 }
 ```
 
----
-
 ## ✅ Features
 
 - Proxy rotation (bonus requirement)
@@ -167,5 +147,3 @@ python ai_agent.py
 - Scraper error classification and fallback
 - Alphanumeric Patient IDs and randomized insurers
 - Output in normalized, structured JSON
-
----
